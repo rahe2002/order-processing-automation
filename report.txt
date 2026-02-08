@@ -1,0 +1,3 @@
+Valid orders: 2
+Invalid orders: 2
+Total revenue: 1250.0

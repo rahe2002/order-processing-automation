@@ -21,6 +21,15 @@ def validate_orders(orders):
 
     return valid_orders, invalid_orders
 
+def generate_report(valid, invalid):
+    with open("report.txt", "w") as file:
+        file.write(f"Valid orders: {len(valid)}\n")
+        file.write(f"Invalid orders: {len(invalid)}\n")
+
+        total_revenue = sum(order["total"] for order in valid)
+        file.write(f"Total revenue: {total_revenue}\n")
+
+
 
 def main():
     orders = read_orders("orders.csv")
@@ -31,6 +40,9 @@ def main():
    
     total_revenue = sum(order["total"] for order in valid)
     print(f"Total revenue: {total_revenue}")
+
+    generate_report(valid, invalid)
+
 
 
 if __name__ == "__main__":
