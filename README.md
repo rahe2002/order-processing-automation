@@ -16,3 +16,5 @@ validates entries, and generates a basic summary.
 ## Tech stack
 - Python
 - CSV
+
+This project was created as part of learning Python and GitHub basics.
