@@ -1,0 +1,5 @@
+order_id,customer,product,quantity,price
+1001,John Doe,Laptop,1,1200
+1002,Ana Popescu,Mouse,2,25
+1003,,Keyboard,1,75
+1004,Maria Ionescu,Monitor,1,
