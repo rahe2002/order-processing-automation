@@ -14,11 +14,13 @@ def validate_orders(orders):
 
     for order in orders:
         if order["customer"] and order["price"]:
+            order["total"] = float(order["price"]) * int(order["quantity"])
             valid_orders.append(order)
         else:
             invalid_orders.append(order)
 
     return valid_orders, invalid_orders
+
 
 def main():
     orders = read_orders("orders.csv")
@@ -26,6 +28,10 @@ def main():
 
     print(f"Valid orders: {len(valid)}")
     print(f"Invalid orders: {len(invalid)}")
+   
+    total_revenue = sum(order["total"] for order in valid)
+    print(f"Total revenue: {total_revenue}")
+
 
 if __name__ == "__main__":
     main()
